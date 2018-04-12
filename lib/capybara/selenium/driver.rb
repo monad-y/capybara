@@ -17,7 +17,7 @@ class Capybara::Selenium::Driver < Capybara::Driver::Base
     unless @browser
       if firefox?
         options[:desired_capabilities] ||= {}
-        options[:desired_capabilities][:unexpectedAlertBehaviour] = "ignore"
+        options[:desired_capabilities][:unexpectedAlertBehaviour] = "dismiss"
       end
 
       @processed_options = options.reject { |key, _val| SPECIAL_OPTIONS.include?(key) }
